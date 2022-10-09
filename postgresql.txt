@@ -1,0 +1,145 @@
+PostgreSQL 
+
+1 -GETTING STARTED WITH POSTGRESQL-
+
+WHAT IS AN RDBMS?
+- Creates a protective wrapper around your data
+- Gives your data a place to live 
+- Controls modifications (how it gets entered, updated, deleted)
+- Secures your data by enforcing access permissions
+- Manages system performance, for data writes and reads in the most efficient way possible 
+
+Uses a Server/Client model 
+- PostgreSQL handles storage, security, and maintenance of your data 
+- by storing it  in a container called the database
+- Each Postgres server can contain multiple databases
+- A client app is then connected to the server so that end-users can input, modify and retrieve data
+- Server can be held on centralised com that is single POC for all users in org
+- This way all users are updating same database
+
+Structured Query Language (SQL) 
+- Uses human readable syntax 
+
+Working with Postgres 
+- Working with Postgres requires 2 components 
+- 1. Postgres server --> will house data and manage connections, security, maintenance of data
+- 2. Management app/ front-end client --> Will communicate with server so can work with database and view its data
+
+PSQL Shell
+- Command Line Interface (CLI) for working with Postgres db servers 
+- quick way for admins to log in to server and enter commands
+
+Access PostgreSQL sevrer through PSQL Shell 
+- will ask for location of database (if client & server on same machine, use 'local host', else use IP address of server)
+- which database you want to connect to. Each server can hold many db. Brand new servers have only one db, 'Postgres'
+- the communication port that the server is listening on. Default is 5432
+- user account credentials
+- user password 
+--> now can send commands to server
+
+COMMANDS
+- commands must end with a ';'
+- CREATE DATABASE command with db name
+- To see list all db on server \l 
+- to work with database need to switch to it
+- command \c <name of database>
+- command prompt will change to match current db 
+- CREATE TABLE <name table> and in parentheses, the names of the columns that will make up the table and the value type they will store
+- to store data in db, command INSERT INTO <table name> VALUES (<values for each row in brackets, separated by commas>)
+- to select values from table, SELECT * FROM <name of table> 
+
+BROWSE THE SERVER WITH A GRAPHICAL INTERFACE (PGADMIN 4)
+
+2 -AN INTRODUCTION TO RELATIONAL DATABASES-
+
+THE STRUCTURE OF A DATABASE TABLE 
+- The foundation of a database is a 'data table'
+- Data Tables : used to store and organise data you want to keep track of
+- you can create a data table by defining the different columns it is composed of
+- these columns are called 'attributes' or 'fields'
+- they are used to store the individual descriptive components of each item that is stored in the table
+- ie in table about books, you might have column for 'title' , 'author', 'publication_year'
+- naming conventions : in Postgres databases use lowercase letters for table and column names, and separate words with underscore character
+- each row in table will represent single column 
+- convention to add id to table for each row, naming it after table as such '<name of table>_id'
+- for example, 'books_id'
+- this will store a unique identifier for each row in the table 
+- the id column is called the table's 'Primary Key'
+
+PRIMARY KEYS 
+- Unique value for each row in the table 
+- always has a unique constraint applied to it 
+- to make sure each row has one piece of information different from other rows 
+- does not have real-world significance 
+- does not imply ranking, sequence, or count of items 
+- common primary keys include phone number, email address, credit card number 
+
+POSTGRESQL NATIVE DATA TYPES
+- the role data types play in the design of tables
+- Postgres support s a wide array of data types that you can use to control what kinds of info can be stored in each column of your table 
+- different groups : monetary, numeric, binary, boolean, geometric, date/time values ... 
+
+NUMERIC DATA TYPES
+- are used for storing numbers 
+- when whole numbers can choose between integer, smallint, bigint
+- use numeric or decimal data type for fractional numbers
+- for floating point values use real and double precision types 
+
+CHARACTER or CHAR DATA TYPE
+- fixed length use character or char 
+- variable length use varchar(n) data type 
+- unlimited data length use text data type, ie for blogposts and news articles
+
+DATE AND TIME DATATYPES
+- date data type 
+- time data type
+-  timestamp data type will store time and date in same column 
+- timestamp with time zone adds time zone to timestamp 
+
+
+JOIN TABLES TOGETHER WITH RELATIONSHIPS
+- 'relational' ==> what makes POSTGRESQL more than just a collection of excel spreadsheets
+- multiple table seperate information pout by topic 
+- but allow information to be crossed referenced by following a thread between matching values in PK and FK columns 
+- allowing to store Datta with minimum redundancies 
+- while protecting against inconsistencies that can make a dataset untrustworthy 
+
+3 -BUILDING A DATABASE-
+
+ORGANISE TABLES WITH SCHEMAS
+- Schemas are a way to organise and group objects in your database
+- Database --> Schema --> Table 
+- as a db designer, you can create whatever schemas you want to help organise your db 
+- schema = 'categories' 
+- schema can also help secure server and help make suer permissions easier 
+- ie give user access to all tables in schema, while preventing them from accessing tables in other schema 
+- if your database will have large number of users and separation of resources is a concern 
+- important to think through schema organisation and implement early in design process
+
+
+PRACTICE/EXERCISES 
+- created tables through terminal, visualised in Pg Admin
+- linked primary and foreign keys
+- enforced referential integrity on related records 
+
+4 -RETRIEVE INFORMATION WITH QUERIES- 
+
+IMPORT DATA FROM A CSV 
+- The point of saving data in a database is so that you can organise and retrieve information back out of the database for later analysis or review. 
+- Process of retrieving data is called QUERYING the database.
+- Postgres uses the same SQL language that's standard across all relational database platforms.
+- Can use GUI to import data in csv file. 
+- Csv is a common format that can be read by any spreadsheet application.
+
+JOIN TABLES FOR ADDITIONAL INFORMATION 
+- relational databases are made of multiple tables that use PK and FK relationships to tie tables together
+- this is an efficient way to organise data for the db management system 
+- however it can make it more difficult to get info from table if you try to look one at a time
+- using a select query we can pull columns from multiple tables, relate them together, and view al the info in a single output window 
+
+SAVE A QUERY AS A DB VIEW
+- use at top of query command
+- CREATE VIEW <desired table name> AS <rest of query code>
+
+
+
