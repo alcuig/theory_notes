@@ -1,0 +1,193 @@
+O'Reilly 
+Fundamentals of Data Engineering
+by Joe Reis, Matt Housley
+
+---
+CHAPTER 1 
+
+Note summary:
+* Defined data engineering and describing what data engineers do
+* Described the types of data maturity in a company
+* Described which stakeholders data engineers work with 
+
+
+---
+Data engineering defined 
+
+Data engineering is the development, implementation and maintenance of systems and processes that take in raw data and produce high quality, consistent information that supports downstream use cases, such as analysis and machine learning. 
+
+Data engineering is the intersection of security, data management, DataOps, data architecture, orchestration, and software engineering.
+
+A data engineer manages the data engineering lifecycle, beginning with getting data fro source systems and ending with serving data for use cases, such as analysis or machine learning.
+
+The Data Engineering Lifecycle 
+
+Stages:
+- Generation
+- Storage
+- Ingestion
+- Transformation
+- Serving
+
+Undercurrents (critical ideas across the entire lifecycle):
+- security
+- data mangement 
+- DataOps
+- data architecture
+- orchestration 
+- software engineering
+
+Data engineers play a vital role in making data science useful in production.
+
+----
+
+Data from various sources ---> Data engineering ---> Data science and analytics 
+
+----
+
+Data engineering skills and activities:
+- Understanding of how to evaluate data tools and how they fit together across the data engineering lifecycle.
+- It's critical to know how data is produced in source systems and how analysts and data scientists will consume and create value after processing and curating data. 
+- Constant optimisation along the axes of cost, agility; scalability, simplicity, reuse, interoperability.
+
+- Modern data tools abstract and simplify workflows.
+- As a result, data engineers are now focused on balancing the simplest and most cost-effective services that delivery value to the business.
+- And to create agile data architectures that evolve as new trends emerge.
+
+Data engineers should have a good functioning understanding of the following areas to serve stakeholders:
+- Building ML models
+- Creating reports or dashboards
+- Performing data analysis
+- Building KPIs
+- Developing software applications
+
+---
+
+Data maturity:
+- the progression toward higher data utilisation, capabilities and integration across the organisation
+- does not depend on the age or revenue of a company
+- level of data engineering complexity within a company 
+- impacts a data engineer's day to day job responsibilities
+
+Simplified 3 stage data maturity model:
+1. Starting with data
+2. Scaling with data
+3. Leading with data
+
+---
+
+Background and Skills of a data engineer:
+1. Understanding data : knowledge of data management best practices
+2. Understanding technology: Aware of tools avail, their interplay, their trade-offs
+3. Requirements of data consumers (data analysts an data scientists)
+
+Business responsibilities:
+- Know how to communicate with nontechnical and technical people
+- Understand how to scope and gather business and product requirements
+- Understand the culture foundations of Agile, DevOps and DataOps
+- Control costs
+- Learn continuously 
+
+Data engineers remain software engineers, in addition to their many other roles.
+
+Primary languages of data engineering:
+- SQL : the most common interface (way of operating system, communication channel) for databases and data lakes
+- Python : data engineering tools are written in Python or have Python APIs
+- Java or Scala (JVM language) :used in Apache open source projects ie Spark, Hive. More performant than Python.
+- bash : CLI for Linux OS. 
+
+--
+
+Internal facing vs external facing engineers:
+- depending on use-cases, responsibilities are external facing, internal facing, or a blend of the 2
+- Internal users <---> Data engineer <---> External users
+
+External facing:
+- architects, builds and manages the systems that collect, store and process transactional and event data fro, external facing apps I.e. social media, IoT, e-commerce platforms.
+- systems built have a feedback loop from the app to the data pipeline, then back to the app.
+- challenges: larger concurrency loads cs internal systems, limits on queries that users can run to list the impact of any single user, security.
+
+Internal facing: 
+- creating and maintaining data pipelines and data warehouses for BI dashboards, reports, business processes, data science and ML models.
+
+--
+
+Data engineers as bridges between data producers and data consumers
+- Data engineers cut across many domains of responsibilities
+
+Upstream Data Producers					Downstream Data Consumers
+* Software engineers					* Data analysts
+* Data architects	-->	Data engineers --->	* Data scientists
+* DevOps and SREs					* Machine Learning Engineers
+
+
+Upstream stakeholders
+
+- Data architects :
+* Design the blueprint for organisation data management, mapping out processes and overall data architecture and systems.
+* Serve as a bridge between an organisation's technical and nontechnical sides.
+* Play a central role in cloud migrations.
+* Depending on the company's maturity and size, a data engineer may overlap with or assume the responsibilities of a data architect, and must therefore have a good understanding of architecture best practices and approaches.
+
+- Software engineers :
+* Produce most of the internal data that data engineers consume
+* Build the software and systems that run a business
+* These systems will generate app event data and logs (= internal data, vs external data) that will be used for analysis downstream.
+* DE role is to channel it to data warehouse / data lake for later analysis. 
+
+- DevOps and site reliability engineers :
+* Produce data through operational monitoring. 
+* But can also be data consumers, consuming data through dashboards.
+
+Downstream stakeholders
+
+- Data scientists
+* Build forward looking models to make predictions and recommendations. 
+* These models are then evaluated on live data to provide values in various ways.
+* I.e. model scoring might recommend products to customers based on browsing history in their current session, or make live economics predictions used by traders.
+
+* According to common industry folklore, at a scientists spend 70%+ of their time collecting, cleaning, preparing data. 
+* Data engineers automate and scale data collection, cleaning and preparation for data scientists' work.
+
+- Data analysts
+* aka business analysts
+* DEs work with analysts to build pipelines for new data sources required by the business
+* DAs seek to understand business performance and trends
+* Whereas data scientists are forward-looking, data analyst focuses on the past or the present
+* Run SQL queries in a data warehouse or a data lake
+* May use spreadsheets for computation and analysis and BI tools like Microsoft Power BI, Looker, Tableau
+* Data analysts' downstream customers are business users, management, executives
+
+
+- ML engineers and AI researchers
+* Overlap with DEs and DSs. 
+* train models, design and maintain the infrastructure running ML processes
+
+---
+
+Data engineers and business leadership 
+
+- CEO 
+* DEs provide a window to what is possible with data.
+
+- CIO
+* Responsible for information tech within an org, internal facing role
+* Will work with engineers and architects to map out major initiatives and adopt big architectural elements ie CRM systems
+
+- CTO 
+* Similar to CIO but faces outwards
+* owns architectures for external facing technologies ie web apps, IoT
+* which are all data sources for DEs
+* DEs often report to the a CTO.
+
+- Chief Data Officer (CDO)
+* responsible for data assets and strategy, business analytics and data engineering. 
+
+- Chief Analytics Officer (CAO)
+* focuses on analytics
+
+- Chief Algorithms Officer (CAO-2)
+
+- Project Managers 
+
+- Product Managers 

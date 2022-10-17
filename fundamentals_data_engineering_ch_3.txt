@@ -1,0 +1,24 @@
+'Reilly 
+Fundamentals of Data Engineering
+by Joe Reis, Matt Housley
+
+---
+CHAPTER 3 
+
+Designing good data architecture 
+
+---
+
+DATA WAREHOUSE 
+- central data hub used for reporting and analysis 
+- typically highly formatted and structured for analytics use cases 
+
+DATA MART 
+- more refined subset of a warehouse designed to serve analytics and reporting
+- focused on a single suburbanisation, department, or line of business 
+- specific to the department's needs
+- makes data more easily accessible to analysts and report developers
+- additional stage of transformation beyond that provided by initial ETL or ELT pipelines which can improve performance of analytics queries with complex joins 
+
+DATA LAKE
+- dumps all data, structured and unstructured, into a central location 

@@ -1,0 +1,62 @@
+DATA SCIENCE PREPARATION COURSE - LE WAGON 
+
+1. DATA SCIENCE MATH FUNDAMENTALS
+
+Brief maths refresher to the concepts needed to better understand the Mathematics theory behind Machine Learning and Deep Learning.
+
+2. INTRO TO STATISTICS AND PROBABILITY - HISTOGRAMS
+	- Stack data points together. 
+	- Gives us a sense of how likely it is (probable) that we'll get certain measurements, and how they are distributed.
+	- Can be used to predict the probability of getting future datapoints. 
+	- Thicker part of histogram = shows the region where measurements are most likely. 
+	- Whereas edges on extremities are rarer and less likely to happen in the future.
+	- Used as distribution to approximate data (or future measurements).
+	- Distribution =  function that shows how the probabilities of measurements are distributed.
+	- I.e histograms and curves.
+
+3. STATISTICS FUNDAMENTALS - PROBABILITY DISTRIBUTIONS
+	- We can use a curve to approximate a histogram.
+	-  The curve has some advantages over the histogram.
+	- Can be used to approximate probability in spite of no/little underlying data.
+	- Calculated based on mean and standard deviation of collected data.
+
+4. STATISTICS FUNDAMENTALS -  THE NORMAL DISTRIBUTION 
+	- What is it and how do we interpret it?
+	- aka "GAUSSIAN" distribution
+	- or "BELL SHAPED CURVE"
+
+	- the Y axis represents the relative probability of a measurement (on X axis) occurring 
+	- from top MOST LIKELY to bottom LEAST LIKELY 
+
+	- normal distributions are always centred on the average value
+	- the width of the curve is defined by the standard deviation 
+	- small standard deviation = tall and narrow
+	- large standard deviation = short and spread out
+
+	- normal curves are drawn such that 95% of the measurements fall between +/- 2 SD around the mean
+	- ex if SD is 0.6, 95% measurements fall between mean +/- 1.2  
+	- ex if SD is 4, 95% measurements fall between between mean +/- 8
+
+	- To draw a normal distribution, you need to know:
+		1. The average measurement.It tells you where the centre of the curve goes.
+		2. The SD of the measurements, which tells you how wide the curve should be around the mean. 
+		   The width of the curve determines how tall it is. The wider the curve, the shorter. 
+		   The narrower the curve, the taller. 
+- 	
+	- Central Limit Theorem 
+
+5. STATISTICS FUNDAMENTALS -  POPULATION PARAMETERS
+	- Population = set of data (which can be represented as a curve, histogram)
+	- Mean and SD are population parameters 
+	- Mean is called population mean, SD = Population SD
+
+	- EXPONENTIAL DISTRIBUTION 
+	- its shape is determined by the Rate 
+	- Shape and Rate are population parameters for Gamma distributions
+	 
+
+6. STATISTICS FUNDAMENTALS - MEAN, VARIANCE, STANDARD DEVIATION 
+	- 
+
+
+7. ALGEBRA AND CALCULUS 

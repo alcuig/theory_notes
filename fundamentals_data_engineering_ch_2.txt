@@ -1,0 +1,130 @@
+O'Reilly 
+Fundamentals of Data Engineering
+by Joe Reis, Matt Housley
+
+---
+CHAPTER 2 
+
+The Data Engineering Lifecycle 
+
+---
+
+What is the data engineering lifecycle?
+- comprises stages that turn raw data ingredients into a useful end product, ready for consumption by analysts, data scientists and others
+---
+
+- 5 stages:
+1. Generation 
+2. Storage
+3. Ingestion 
+4. Transformation 
+5. Serving data
+
+-------------
+
+Generation	--->	Ingestion ---> Transformation ---> Serving --->	* Analytics
+					Storage				* Machine Leaning
+									* Reverse ETL
+
+-------------
+
+- Begin lifecycle by getting data from source systems and storing it
+- Then transform the data 
+- And serve data to analysis, data scientists
+
+-------------
+
+Stage 1. Generation : Source Systems
+- Source system= proton of the data used in the data engineering lifecycle.
+- I.e. IoT device, an app message queue, transactional database
+- DE needs to understand how source systems work, the way they generate data, the frequency and velocity of data, the variety of data they generate
+
+Stage 2. Storage
+- Choosing a place to store the data
+- pure storage solution (object storage) vs 
+- storage with querying capabilities I.e. S3 AWS (cloud data warehouse)
+- consider data access frequency - data 'temperatures'
+- hot data is data that is accessed frequently, many times a day, per second 
+- lukewarm data might be stored every week or month
+- cold data is seldom queried and is stored in an archival system (cheap storage costs but high data retrieval costs)
+
+Stage 3. Ingestion from source systems
+- Can be biggest bottle necks
+- for example might randomly become unresponsive or provide poor quality data 
+- Considerations here can include what formats the data in, can my downstream storage and transformation systems handle this format?
+
+- Batch vs streaming
+* batch = processing data stream in large chunks
+* ingested either on predetermined time interval or when data reaches preset size threshold
+* streaming = real time
+* considerations : can downstream storage systems handle the rate of data flow if I ingest data in real time?
+
+- Push vs pull 
+* push = a source system writes data out to a target (database, object store)
+* pull = data is retrieved from source system
+
+Stage 4 - Transformation 
+- After you've ingested and stored the data, you need to transform the data from its original form into something useful for downstream use cases
+- without proper transformations, data will sit inter, and not be in a useful form for reports, analysis or ML/ 
+- transformation stage is where data begins to create value for downstream user consumption 
+
+- Immediately after ingestion, basic transformations map data into correct types e changing instead string data in numeric and date types
+- putting records into standard formats
+- removing bad ones
+- Later stages of transformation may transform the data schema and apply normalisation 
+
+- Data can be transformed in batch or while streaming in flight 
+- I.e. source system may add timestamp to a record before forwarding it to an ingestion process
+
+
+Stage 5 - Serving data
+- get value from data by getting it consumers/ queried
+- if not it is simply inert
+
+- Analytics : 
+1 BI : 
+> data collected to describe a business' past and current state
+> as a company grows in maturity, will move from ad hoc data analysis to self service analytics, allowing democratised data access to business users without needing IT to intervene.
+> the capability to do self service analytics assumes that data is good enough that people across the organisation can simply access it themselves, slice and dice it however they choose and get immediate insights. 
+
+2 Operational analytics
+> i.e. live view of inventory
+> data is consumed in RT
+> concerns less historical trends unlike BI
+
+3 Embedded analytics
+> customer facing analytics
+> access control and demand on system considerations increase
+
+---
+MAJOR UNDERCURRENTS FOR DATA ENGINEERING
+
+1. Security 
+* Access control to data and systems
+
+2. Data management 
+* Data governance, discoverability, definitions, accountability 
+* Data modeling
+	creating tables in a way that is understandable to the user 
+* Data integrity 
+
+3. DataOps
+* Data governance
+* Observability and monitoring
+* Incident reporting
+
+4. Data architecture 
+* Analyse trade-offs
+* Design for agility 
+* Add value to the business
+
+5. Orchestration 
+	coordinating many jobs to run as quickly and efficiently as possible n a scheduled cadence.
+* Coordinate workflows
+* Schedule jobs
+* Manage tasks
+
+6. Software Engineering
+* Programming and coding skills 
+* Software design patterns 
+* Testing and debugging 
