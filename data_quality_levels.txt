@@ -1,0 +1,25 @@
+Data Quality Levels - Gold, Bronze and Silver
+
+- Concept of data in an organisation transitioning and increasing in value through stages 
+
+- Data lakes ordered in 3 layers
+
+- Bronze : 
+	initial stage of pipeline
+	basic data ingestion in raw formats
+	coming from different sources
+	usually JSON format
+	untransformed from whatever sources produces it
+
+- Silver : 
+	once a business case identified, raw Bronze data transformed into appropriate datasets
+	done by removing unneeded information 
+	adding constraints
+	replacing code to meaningful values
+	considered cleansed and processed
+	can be normalised to make it easier to query
+	
+
+- Gold :  
+	presented in way that is well-constructed and ready to be visualised through BI dashboards
+	or trained by ML models for predictive analytics solutions
