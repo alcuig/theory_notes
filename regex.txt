@@ -1,0 +1,38 @@
+Regular Expressions 
+
+What is Regex?
+Regex, or Regular Expressions, is a sequence of characters, used to search and locate specific sequences of characters that match a pattern.
+
+Using Regex in PostgreSQL
+Metacharacters
+
+Here is a quick cheat sheet for metacharacters to help define the pattern:
+
+METACHARACTER	DESCRIPTION					EXAMPLE	EXAMPLES MATCHES
+^		Start the match at the beginning of a string	^c%	cat, car, chain
+|		Alternation (either of two alternatives)	c(a|o)%	can, corn, cop
+()		Group items in a single logical item		c(a|o)%	can, corn, cop
+_		Any single character(using LIKE and SIMILAR TO) c_	co, fico, pico
+%		Any string (using LIKE and SIMILAR TO)		c%	chart, articulation, crate
+.		Any single character (using POSIX)		c.	co, fico, pico
+.*		Any string (using POSIX)			c.*	chart, articulation, crate
++		Repetition of the previous item 1+ times	co+	coo, cool
+
+
+Examples of Regex in SQL Queries
+
+~		Match, case sensitive
+~*		Match, not case sensitive
+
+--> If you wanted to search a column of a database for all entries that contain the word ‘fire’, you could use ~* ‘fire’  to find any row that contains the word:
+
+SELECT (column name)
+FROM (table name)
+WHERE (column name) ~* 'fire';
+
+
+--> To get all entries that start with the word ‘Fire’:
+
+SELECT (column name)
+FROM (table name)
+WHERE (column name) ~ * '^fire';
